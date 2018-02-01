@@ -1,0 +1,670 @@
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+%Presentazione: Corso introduttivo alla spettrometria di massa LC/MSn Ion Trap
+%Luogo: Grugliasco - Laboratorio matrici complesse Arpa Piemonte
+%Autore: Pasquale Scordino
+%Data: 17 - 18 Gennaio 2018
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+\documentclass{beamer}
+\usetheme{CambridgeUS}
+\usecolortheme{beaver}
+\usefonttheme[onlymath]{serif}
+
+%Settaggio colori e forma degli elenchi puntati
+\setbeamercolor{itemize item}{fg=darkred!80!black}
+\setbeamercolor{itemize subitem}{fg=orange}
+\setbeamercolor{itemize subsubitem}{fg=cyan}
+
+\setbeamertemplate{itemize item}[triangle]
+\setbeamertemplate{itemize subitem}[circle]
+\setbeamertemplate{itemize subsubitem}[triangle]
+
+%Settaggio colore testo e sfondo del titolo del blocco
+\setbeamercolor{block title}{fg=white,bg=darkred!80!black}
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+%Pacchetti usati
+\usepackage[italian]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage{times}
+\usepackage[T1]{fontenc}
+\usepackage{graphics}
+\usepackage{subfigure}
+\usepackage{multimedia}
+\usepackage{pifont,xcolor} % http://ctan.org/pkg/{pifont,xcolor}
+\usepackage{fancybox}
+\usepackage{textpos}
+\usepackage{amsmath}
+\usepackage{xcolor}
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+%Prima slide intestazione
+\title[LC/MSn Ion Trap]{\textbf{Breve introduzione alla spettrometria di massa} \textit{\textbf{LC/MSn Ion Trap}}}
+
+\author[P. Scordino\hspace{0.45cm}{p.scordino@arpa.piemonte.it}]{P. Scordino}
+\institute{ARPA Piemonte}
+
+\titlegraphic{
+
+  \includegraphics[width=2cm,height=2cm,keepaspectratio]{Images/Arpacolori.jpg}%
+  \hspace*{8.20cm}
+  \includegraphics[width=2cm,height=2cm,keepaspectratio]{Images/logo_SNPA_COL.jpg}%
+
+}
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+%Inizio 
+\begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+\begin{frame}
+	\frametitle{Generalità sulla spettrometria di massa}
+		\begin{itemize}
+			\item La spettrometria di massa è una tecnica analitica applicata sia 	all'\textbf{identificazione} di sostanze sconosciute, sia all'\textbf{analisi in tracce} di sostanze. 
+			\item Il principio su cui si basa è la possibilità di \textbf{separare} una miscela di \textbf{ioni} in funzione del loro \textbf{rapporto massa/carica} generalmente tramite campi magnetici statici o oscillanti. 
+			\item Il diagramma che riporta l'abbondanza di ogni ione in funzione del rapporto massa/carica è il cosiddetto spettro di massa.
+		\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Generalità sulla spettrometria di massa}
+	\begin{center}
+		\begin{block}{Schema a blocchi di uno spettrometro di massa}
+			\begin{figure}
+				\includegraphics[scale=0.30]{Images/SchemaBlocchiMS_2.jpg}
+			\end{figure}
+		\end{block}
+	\end{center}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Generalità sulla spettrometria di massa}
+		\begin{center}
+			\begin{block}{Attuali tipologie di spettrometri di massa}
+				\begin{itemize}
+					\item Spettrometro a \textit{singolo quadrupolo} \textbf{Q}
+					\item Spettrometro a \textit{triplo quadrupolo} \textbf{QqQ}
+					\item Spettrometro a \textit{settore magnetico}
+					\item Spettrometro a \textcolor{orange}{\textbf{trappola ionica}} \textbf{QIT}
+					\item Spettrometro a risonanza ionica ciclotronica \textbf{FT-ICR}
+					\item Spettrometro \textit{orbitrap}
+					\item Spettrometro a \textit{tempo di volo} \textbf{TOF}
+				\end{itemize}
+			\end{block}
+	\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{La trappola ionica}
+	\begin{center}
+		\begin{block}{Un pò di storia}
+	 		\begin{figure}
+	 			\subfigure[]{
+					\includegraphics[scale=0.19]{Images/Nobel_MS.jpg}}
+					\hspace{5mm}
+				\subfigure[]{
+					\includegraphics[scale=0.27]{Images/History.jpg}}
+			\end{figure}
+		\end{block}
+	\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{La trappola ionica}
+	\begin{block}{Schema teorico di una trappola ionica}
+	\vspace{3mm}
+		\begin{columns}[T]
+			\begin{column}{.55\textwidth}
+				\includegraphics[scale=0.27]{Images/SchemaTeoricoIT.jpg}
+			\end{column}
+			\begin{column}{.50\textwidth}
+			\href{Videos/CorsoV/PaulIonTraps.mp4}{\includegraphics[scale=0.16]{Images/SchemaTeoricoIT_2.jpg}}	
+			\end{column}	
+		\end{columns}
+	\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{La trappola ionica}
+\begin{block}{Quadrupolo monodimensionale}
+	\vspace{3mm}
+	\begin{columns}[T]
+		\begin{column}{.46\textwidth}
+		\vspace{3mm}
+			\includegraphics[scale=0.27]{Images/PotenzialeCampo.jpg}
+		\end{column}
+		\begin{column}{0.46\textwidth}
+			\vspace{3mm}
+			\small Potenziale e forza di campo in un ipotetico campo quadrupolare unidimensionale.
+			
+			\vspace{3mm}
+			 
+			\small La pendenza del diagramma del potenziale $\Phi$ rispetto alla posizione $x$ determina la forza del campo $E(x)$.
+		\end{column}	
+	\end{columns}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{La trappola ionica}
+Da un punto di vista fisico/matematico possiamo rappresentare la tecnica in trappola ionica con le seguenti equazioni:
+
+\begin{itemize}	
+	\item Il campo quadrupolare è il campo di forza $E$ che varia al variare di $x$.
+		
+		\begin{equation}
+			E = E_{0}x
+		\end{equation}
+	
+	\item Il potenziale applicato $\Phi$ varia quadraticamente in modo che il campo di forza $E$ vari linearmente con $x$.
+	
+		\begin{equation}
+			\Phi = f(x^{2})
+		\end{equation}
+
+		\begin{equation}
+			E = -\dfrac{d\Phi}{dx} = f(x)
+		\end{equation}
+		 	
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{La trappola ionica}
+\begin{itemize}	
+	\item Il potenziale $\Phi_{r,z}$ in ogni punto è dato dalla seguente equazione:	
+	\begin{center}
+		\begin{equation}
+		\Phi_{r,z} = (U + V \cos \omega t)(\dfrac{r^{2}-2z^{2}+2z_{0}^{2}}{r_{0}^{2}+2z_{0}^{2}})
+		\end{equation}
+	\end{center}
+\end{itemize}
+Il primo termine indica la dipendenza temporale e il secondo quella spaziale.
+
+	\begin{itemize}
+		\item $r_{0}$ è il raggio interno dell'elettrodo circolare (ring)
+		\item $z_{0}$ è la piu piccola distanza dal centro della trappola alla calotta (end-cap)
+		\item $U$ è il potenziale applicato in corrente continua 
+		\item $V$ è il potenziale applicato in corrente alternata a radio frequenze
+		\item $\omega$ è la frequenza angolare
+		\item $t$ è il tempo
+	\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{La trappola ionica}
+\begin{block}{Diagramma di \textit{ Mathieu}}
+	\vspace{3mm}
+	\begin{columns}[T]
+		\begin{column}{.45\textwidth}
+			\includegraphics[scale=0.23]{Images/MathieuDiagramm.jpg}
+		\end{column}
+		\begin{column}{0.45\textwidth}
+			\vspace{5mm}
+			\small Gli ioni sono stabili sia nella direzione $\textbf{r}$ che nella direzione $\textbf{z}$ se i loro parametri $\textbf{a}_{z}$ e $\textbf{q}_{z}$ rientrano nell'area reticolata del diagramma. 
+			
+			\vspace{3mm}
+			
+			\small La modalità comune di analisi è la scansione di instabilità mass-selective in cui il potenziale di $\textbf{rf}$ viene aumentato per aumentare il valore di $\textbf{q}_{z}$ al punto di instabilità, mentre $\textbf{a}_{z} \textbf{= 0}$	
+		\end{column}	
+	\end{columns}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{La trappola ionica}
+Le soluzioni dell'equazione differenziale di secondo ordine di Mathieu permettono di calcolare i parametri di stabilità di una trappola ionica che sono prontamente riassunti nel diagramma di Mathieu:
+		
+		\begin{equation}
+			a_{z} = -2a_{r} = \dfrac{-16zU}{m(r_{0}^{2}+2z_{0}^{2})\omega^{2}}
+		\end{equation}
+
+
+		\begin{equation}
+			q_{z} = -2q_{r} = \dfrac{8zV}{m(r_{0}^{2}+2z_{0}^{2})\omega^{2}}
+		\end{equation}
+	
+Riarrangiando l'equazione (6) otteniamo:
+
+		\begin{equation}
+			m/z = \dfrac{8V}{q_{z}(r_{0}^{2}+2z_{0}^{2})\omega^{2}}
+		\end{equation}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Spettrometro LC/MS a trappola ionica}
+	\begin{block}{Schema generale di funzionamento}
+	\begin{center}
+			\includegraphics[scale=0.25]{Images/art34-cc-core-esi-ms-fig1_v3.jpg}	
+	\end{center}
+	\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Spettrometro LC/MS a trappola ionica}
+\begin{itemize}
+\item \small \textbf{ESI} - Grazie ad un \textbf{potenziale elettrico} di 2 - 6 kV dal cono di Taylor l'\href{Videos/CorsoV/ELECTROSPRAY.mp4}{\textbf{elettrospray}} evolve, con l'aiuto del Dry gas $N_{2}$ caldo (325-350 °C), verso una \textbf{esplosione coulombiana} che lascia gli ioni nudi. ESI è sensibile alla concentrazione dell'analita pertanto lavora bene a bassi flussi (0.001 - 1 ml/min). 
+\end{itemize}
+	\begin{center}
+		\begin{block}{Le principali sorgenti di ioni a pressione atmosferica API}
+	 		\begin{figure}
+	 			\subfigure[ESI]{
+					\href{Videos/CorsoV/PRINCIPEESI.avi}{\includegraphics[scale=0.2]{Images/ESI_Source.png}}}
+					\hspace{2mm}
+			\end{figure}
+		\end{block}
+	\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Spettrometro LC/MS a trappola ionica}
+\begin{itemize}
+\item \small \textbf{APCI} - Il campione nebulizzato viene desolvatato termicamente (300 -500 °C), un \textbf{ago in tensione} ionizza il gas ausiliario ($N_{2}$) per \textbf{effetto corona} che a sua volta trasferische la carica all'analita. APCI è sensibile alla quantita di materia pertanto lavora bene a flussi alti (0.2 - 2 ml/min) generalmente sotto i 0.4 ml/min perde sensibilità.
+\end{itemize}
+	\begin{center}
+		\begin{block}{Le principali sorgenti di ioni a pressione atmosferica API}
+	 		\begin{figure}
+				\subfigure[APCI]{
+					\href{Videos/CorsoV/apci.avi}{\includegraphics[scale=0.12]{Images/APCI_Source.png}}}
+			\end{figure}
+		\end{block}
+	\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Spettrometro LC/MS a trappola ionica}
+\begin{itemize}
+\item \small \textbf{APPI} - Il campione nebulizzato viene desolvatato termicamente (300 -500 °C), una \textbf{lampada UV a 10.0 eV} fotoionizza l'\textbf{agente dopante} (\textbf{toluene}, acetone) che trasferische la carica all'analita. APPI è molto simile nell'applicazione alla APCI.
+\end{itemize}
+	\begin{center}
+		\begin{block}{Le principali sorgenti di ioni a pressione atmosferica API}
+	 		\begin{figure}
+				\subfigure[APPI]{
+					\includegraphics[scale=0.12]{Images/APPI_Source.png}}
+			\end{figure}
+		\end{block}
+	\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Spettrometro LC/MS a trappola ionica}
+	\begin{block}{Applicazioni in chimica analitica}
+	\begin{center}
+			\includegraphics[scale=0.3]{Images/API_SourcesApplication.png}	
+	\end{center}
+	\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Spettrometro LC/MS a trappola ionica}
+	\begin{center}
+		\begin{block}{Spettrometro QIT Agilent}
+	 		\begin{figure}
+	 			\subfigure[Foto Spettrometro QIT]{
+				 \href{Videos/CorsoV/AgilentMassSpectrometer.mp4}{\includegraphics[scale=0.28]{Images/IT_Agilent.png}}}
+				\hspace{8mm}
+				\subfigure[Foto connessioni]{
+				\includegraphics[scale=0.20]{Images/connect_IT_Agilent.png}}
+		\end{figure}
+	\end{block}
+	\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Spettrometro LC/MS a trappola ionica}
+La pulizia della sorgente si effettua abbassando la \textbf{Dry Temp. a 70°C}  e mettendo lo strumento in \textbf{standby}. La pulizia va effettuata con \textbf{alcool isopropilico $\textbf{99.5}\%$} e usando \textbf{Gloves, clean, lint free (PN 9300-1751) e Cloths, clean, lint free (PN 05980-60051)}.
+\begin{center}
+	\begin{block}{ESI Spettrometro Agilent}
+		\begin{figure}
+			\subfigure[Foto ESI Agilent]{
+				\includegraphics[scale=0.16]{Images/AGILENTSOURCEFOTO.jpeg}}
+			\hspace{2mm}
+			\subfigure[Schema ESI Agilent]{
+				\includegraphics[scale=0.21]{Images/ESI_Scheme.png}}
+		\end{figure}
+	\end{block}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Spettrometro LC/MS a trappola ionica}
+Per la \textbf{sostituzione delle sorgenti} lo spettrometro va messo prima in \textbf{standby (Dry Temp. 70°C)} e poi in \textbf{shutdown}.
+\begin{center}
+	\begin{block}{APCI Spettrometro Agilent}
+		\begin{figure}
+			\subfigure[Foto APCI Agilent]{
+				\includegraphics[scale=0.30]{Images/APCI_Foto.png}}
+			\hspace{3mm}
+			\subfigure[Foto APCI interno]{
+				\includegraphics[scale=0.2]{Images/FotoAPCI_3.jpeg}}
+		\end{figure}
+	\end{block}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Spettrometro LC/MS a trappola ionica}
+Il capillare ha due funzioni fondamentali, la prima come \textbf{campionatore di ioni} dal cono spray a pressione atmosferica a una regione di vuoto, la seconda come \textbf{barriera di separazione} fra due parti dello spettrometro a pressioni diverse.
+\begin{center}
+	\begin{block}{Capillare Spettrometro Agilent}
+		\begin{figure}
+			\subfigure[Schema capillare Agilent]{
+				\includegraphics[scale=0.2]{Images/Capillary_IT_Agilent.png}}
+			\hspace{3mm}
+			\subfigure[Foto capillare]{
+				\includegraphics[scale=0.15]{Images/AGILENTCAPILLARY.jpeg}}
+		\end{figure}
+	\end{block}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Spettrometro LC/MS a trappola ionica}
+Lo \textbf{skimmer}, \textbf{ottupolo} (ion guide/trap drive) e le \textbf{lenti ioniche} hanno la funzione di concentrare e focalizzare gli ioni. L'ottupolo in particolare è da considerarsi un \textbf{high-pass mass-filter} che riduce le interferenze delle molecole a basso peso molecolare (matrice/solvente).
+\begin{center}
+	\begin{block}{Skimmer, Ottupoli e lenti ioniche}
+		\begin{figure}
+			\subfigure[Schema interno]{
+				\includegraphics[scale=0.25]{Images/SchemaSkimmerOctLens.png}}
+			\hspace{3mm}
+			\subfigure[Foto octopolo]{
+				\includegraphics[scale=0.15]{Images/octopole.png}}
+		\end{figure}
+	\end{block}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Spettrometro LC/MS a trappola ionica}
+La fase di intrappolamento e accumulo degli ioni necessita di una nuvola di elio ($6\times10^{-6}$ mbar) per diminuire l'energia cinetica del raggio ionico e favorire l'accumulo al centro della trappola.
+\begin{block}{Schema generale trappola ionica}
+	\begin{center}
+		\href{Videos/CorsoV/TrapMassSpectrometer.mp4}{\includegraphics[scale=1]{Images/IT_Scheme.png}}	
+	\end{center}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Spettrometro LC/MS a trappola ionica}
+\begin{block}{Schema generale sistema di vuoto}
+	\begin{center}
+		\includegraphics[scale=0.40]{Images/SistemaVuotoITAgilent.png}	
+	\end{center}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Spettrometro LC/MS a trappola ionica}
+Per garantire il \textbf{vuoto} nei vari stadi dello spettrometro QIT Agilent sono presenti tre pompe da vuoto una \textbf{pompa rotativa} a olio e due \textbf{pompe turbomolecolari}.
+\begin{block}{Foto sistema di vuoto}
+	\begin{figure}
+	\subfigure[Foto pompe turbomolecolari]{
+		\href{Videos/CorsoV/funzturbo.avi}{\includegraphics[scale=0.17]{Images/AGILENTVACUUMSYSTEM.jpeg}}}
+	\hspace{3mm}
+	\subfigure[Foto pompa rotativa ad olio]{
+		\includegraphics[scale=0.18]{Images/FotoPompaRotativa.png}}
+\end{figure}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Spettrometro LC/MS a trappola ionica}
+La pompa rotativa ad olio necessita, oltre il controllo settimanale del livello e colore dell'olio, l'apertura della valvola di ballast almeno una volta alla settimana per 20 minuti.
+\begin{block}{Pompa rotativa ad olio}
+	\begin{figure}
+		\subfigure[Schema generale]{
+			\href{Videos/CorsoV/rotativarecuperoolio.avi}{\includegraphics[scale=0.18]{Images/PompaRotativaOlio.png}}}
+		\hspace{8mm}
+		\subfigure[Schema pompa Edwards]{
+			\includegraphics[scale=0.17]{Images/SchemaRotativa.png}}
+	\end{figure}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Modalità di utilizzo di uno spettrometro}
+Le principali modalità di utilizzo di uno spettrometro di massa sono le seguenti:
+	\begin{itemize}
+ 		\item \colorbox{orange}{\textbf{Full scan MS - \textit{QIT, Q, QqQ}}}
+ 			\begin{itemize}
+ 			 \item Scansione degli ioni formati in sorgente.
+ 			\end{itemize}
+ 		\item \colorbox{orange}{\textbf{Product ion scan (MS/MS o MSn) - \textit{QIT, QqQ}}}
+ 			\begin{itemize}
+ 			\item Accumulo e isolamento di ioni prescelti con successiva frammentazione e scansione degli ioni figli.
+ 			\end{itemize}
+ 		\item \textbf{Selected Reaction Monitoring (SRM/MRM) - \textit{QqQ}}
+ 			\begin{itemize}
+ 			\item Accumulo e isolamento ioni prescelti in Q1, frammentazione in q e accumulo e isolamento frammenti ionici prescelti in Q3.
+ 		\end{itemize}
+ 		\item \textbf{Neutral Loss Scan (NL) - \textit{QqQ}}
+ 			\begin{itemize}
+ 			\item Scansione in Q1, frammentazione in q e scansione degli ioni con massa (m - frammento neutro) in Q3.
+ 		\end{itemize}
+ 		\item \textbf{Precursor Ion Scan (PIS) - \textbf{QqQ}}
+ 			\begin{itemize}
+ 			\item Scansione in Q1 frammentazione in q e accumulo e isolamento frammenti ionici prescelti in Q3.
+ 		\end{itemize}
+	\end{itemize}	
+\end{frame}
+
+\begin{frame}
+\frametitle{Ottimizzazione dei parametri di uno spettrometro QIT}
+\small La fase di ottimizzazione dei parametri di uno spettrometro di massa inizia introducendo l'analita in esame all'interno dello spettrometro attraverso l'interfaccia prescelta. Esistono due modi di operare, o con solo la pompa ad infusione, oppure introducendo il flusso dall'HPLC in un raccordo a T con la pompa ad infusione.
+\begin{itemize}
+	\item \textbf{Pompa ad infusione} impostata a 0.3 ml/h (va preventivamente programmata - diametro interno siringa usata).
+	\item La soluzione da usare deve avere una \textbf{concentrazione di 1 ppm in analita} e come solvente la miscela di solventi usati per la sua eluizione in HPLC. 
+	\item Valori alla sorgente usando la sola pompa ad infusione: Nebulizer 5 psi - 15 psi, Dry Gas 5 l/min, Dry Temp 325 °C.\\ 
+	Nel caso del \textbf{raccordo a T} i valori variano alla sorgente: HPLC flow 100 - 500 $\mu l/min$, Nebulizer 20 psi - 40 psi, Dry Gas 8 - 10 l/min, Dry Temp 325 - 350 °C
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Ottimizzazione dei parametri di uno spettrometro QIT}
+\begin{block}{Pompa ad infusione}
+	\begin{figure}
+		\subfigure[Foto pompa infusione]{
+			\includegraphics[scale=0.12]{Images/PompaInfusione.jpg}}
+		\hspace{3mm}
+		\subfigure[Schema di collegamento con T]{
+			\includegraphics[scale=0.3]{Images/raccordoT_InfusionPump.png}}
+	\end{figure}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Ottimizzazione dei parametri di uno spettrometro QIT}
+\begin{block}{Finestra di controllo  spettrometro QIT Agilent}
+	\begin{figure}
+				\includegraphics[scale=0.25]{Images/WindowsIT_Controll.png}
+	\end{figure}
+\end{block}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Ottimizzazione dei parametri di uno spettrometro QIT}
+Attraverso questa finestra è possibile \textbf{ottimizare i parametri} della sorgente e dello spettrometro con l'aiuto della funzione \textbf{Smart}. Per un utente esperto che ha la necessità di intervenire su ogni parametro può usare la funzione \textbf{Expert} e la \textbf{finestra Optimize}.
+\begin{block}{Finestra di controllo  spettrometro QIT Agilent}
+	\begin{figure}
+		\includegraphics[scale=0.55]{Images/TUNE.png}
+	\end{figure}
+\end{block}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Ottimizzazione dei parametri di uno spettrometro QIT}
+\begin{block}{Diagramma di ottimizzazione}
+	\begin{figure}
+		\includegraphics[scale=0.25]{Images/OttimizzazioneSchema.png}
+	\end{figure}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Ottimizzazione dei parametri di uno spettrometro QIT}
+Attraverso questa finestra è possibile accedere a delle \textbf{funzioni automatiche di ottimizzazione} che permettono al massista di trovare i valori ottimali(Ottupoli, Skimmer, lenti ioniche ecc...) per le m/z prescelte\textbf{massimizzando il segnale}.
+\begin{block}{Finestra di controllo  spettrometro QIT Agilent}
+	\begin{figure}
+		\includegraphics[scale=0.55]{Images/Octimize.png}
+	\end{figure}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Determinazione quali/quantitativa di un analita}
+\small Dopo aver messo appunto i parametri dello spettrometro e della sorgente ionica per m/z prescelte si può procedere ad effettuare l'analisi quali/quantitativa. 
+\begin{itemize}
+	\item Per l'analisi qualitativa dopo aver stabilito quale sia lo \textbf{ione quasimolecolare} si può procedere alla frammentazione e allo studio delle m/z figlie, con la QIT è possibile effettuare ulteriori frammentazioni delle m/z figlie per avere conferme sui pattern di frammentazione ipotizzati. Per essere certi sull'identità della molecola in esame bisognerebbe sintetizzare la molecola ipotizzata o comprarne lo standard per verificare se alle stesse condizioni i pattern di frammentazione sono gli stessi della nostra molecola in esame.
+	\item Per l'analisi quantitativa a seconda del tipo di analità si può lavorare o in \textbf{full scan MS} o in \textbf{Product ion scan(MSn)}.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Determinazione quali/quantitativa di un analita}
+\begin{block}{Finestra di controllo  spettrometro QIT Agilent}
+Utilizzando le funzioni presenti nella finestra\textbf{ MS(n)} è possibile sceglire la modalità di utilizzo che meglio si adatta all'analita in esame.
+	\begin{figure}
+		\includegraphics[scale=0.55]{Images/MSn.png}
+	\end{figure}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Determinazione quali/quantitativa di un analita}
+\begin{block}{Spettro MS aquisito in Full Scan MS}
+Sulfamethazine, MW: 278.33 g/mol
+	\begin{figure}
+		\includegraphics[scale=0.28]{Images/MS_Analysis.png}
+	\end{figure}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Determinazione quali/quantitativa di un analita}
+\begin{block}{Spettro MS aquisito in Product ion scan (MSn) }
+	Sulfamethazine, MW: 278.33 g/mole, \textcolor{orange}{transizione $MS^2$ 279 $\rightarrow$ 186}
+	\begin{figure}
+		\includegraphics[scale=0.29]{Images/MS2_Analysis.png}
+	\end{figure}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Determinazione quali/quantitativa di un analita}
+\begin{block}{Spettro MS aquisito in Full Scan MS}
+	Ginsenoside Rb1, MW: 1109.307 g/mol
+	\begin{figure}
+		\includegraphics[scale=0.41]{Images/SapMS.png}
+	\end{figure}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Determinazione quali/quantitativa di un analita}
+\begin{block}{Spettro MS aquisito in Product ion scan (MSn)}
+	Ginsenoside Rb1, MW: 1109.307 g/mol, \textcolor{orange}{transizione $MS^2$ 1131.7 $\rightarrow$}
+	\begin{figure}
+		\includegraphics[scale=0.41]{Images/SapMS2.png}
+	\end{figure}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Determinazione quali/quantitativa di un analita}
+\begin{block}{Spettro MS aquisito in Product ion scan (MSn)}
+	Ginsenoside Rb1, MW: 1109.307 g/mol, \textcolor{orange}{transizione $MS^3$ 789.7 $\rightarrow$ }
+	\begin{figure}
+		\includegraphics[scale=0.41]{Images/SapMS3.png}
+	\end{figure}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Determinazione quali/quantitativa di un analita}
+Uno Spettrometro QIT può, con tutti i limiti del caso, effettuare \textbf{analisi multiresiduo} su un campione a patto che gli analiti siano ben separati e che per ogni settore non ci siano molti analiti che coeluiscono (max 3 o 4) pena perdita di sensibilità. Questo è possibile in quanto il cromatogramma TIC può essere diviso in \textbf{settori parametricamente indipendenti}.
+\begin{block}{Analisi multiresiduo}
+	\begin{figure}
+		\includegraphics[scale=0.5]{Images/MultiRes.png}
+	\end{figure}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Determinazione quali/quantitativa di un analita}
+\begin{block}{Analisi multiresiduo SPME-LC/MSn ion trap}
+	\begin{figure}
+		\includegraphics[scale=0.4]{Images/ArticleMultiRes.png}
+	\end{figure}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Determinazione quali/quantitativa di un analita}
+\textbf{XIC} (extracted ion chromatogram) di 16 composti farmaceutici presenti nelle acque di scarico urbane collettate presso il depuratore di Vitoria-Gasteiz città della provincia autonoma Basca Araba/Álava nel nord della Spagna.
+\begin{block}{Analisi multiresiduo SPME-LC/MSn ion trap}
+	\begin{figure}
+		\includegraphics[scale=0.5]{Images/MultiResiduo2.png}
+	\end{figure}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Determinazione quali/quantitativa di un analita}
+\begin{block}{Analisi multiresiduo SPME-LC/MSn ion trap}
+	\begin{figure}
+		\includegraphics[scale=0.45]{Images/TableMultiRes.png}
+	\end{figure}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Determinazione quali/quantitativa di un analita}
+\small Per l'analisi qualitativa e quantitativa lo spettrometro XTC Agilent usa l'applicativo \textbf{DataAnalysis} che permette la visualizzazione dei cromatogrammi TIC e XIC e dei relativi spettri di massa. Inoltre permette l'integrazione manuale e automatica dei picchi. Questo tool è utilizzato soprattutto per l'analisi di tipo qualitativo e per preparare la fase di analisi quantitativa utilizzando l'applicativo \textbf{QuantAnalysis}. 
+\begin{block}{Tool per analisi dati LC/MSn ion trap Agilent}
+	\begin{figure}
+		\includegraphics[scale=0.23]{Images/WindowsData_Analysis.png}
+		\hspace{10mm}
+		\includegraphics[scale=0.24]{Images/WindowsQuantAnalysis.png}
+	\end{figure}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Conclusioni}
+\begin{center}
+\textbf{La tecnica LC/MS} in generale è una tecnica \textbf{molto potente}, se approcciata con attenzione e \textbf{passione} può dare grandi soddisfazioni. La tecnica non si impara passivamente, se hai l'anima di un massista lo capirai dalle emozioni che questa tecnica riuscira a suscitarti.
+\end{center}
+\begin{block}{Due risate...}
+	\begin{figure}
+		\includegraphics[scale=0.3]{Images/Massista.jpg}
+	\end{figure}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Bibliografia}
+\begin{itemize}
+\small
+\item Manuali LC/MSn QIT XCT - Agilent Technologies
+\item Ion Trap Mass Spectrometry - Philip S.H. Wong, R. Graham Cooks - www.currentseparations.com/issues/16-3/cs16-3c
+\item Ion Trap Mass Spectrometry: A Personal Perspective George Stafford, Jr. - J. Am. Soc. Mass Spectrom 2002, 13, 589-596
+\item Investigating the Use of an Octupole Ion Guide for Ion Storage and High-pass Mass Filtering to Improve the Quantitative Performance of Electronspray Ion Trap Mass Spectrometry - Robert D. Voyksner, HeewonLee - Rapid Commin. Mass Spectrom. 13 1427-1437 (1999)
+\item Optimization and Comparison of ESI and APCI LC/MS/MS Methods: A Case Study of Irgarol 1051, Diuron, and their Degradation Products in Enviromental Samples - Niki C. Maragou, Nikolaos S. Thomaidis, Michael A. Koupparis - J. Am. Soc. MAss Spectrom. (2011) 22:1826-1838
+\item Multi-residue analysis of pharmaceutical compounds in wastewater by dual solid-phase microextraction coupled to liquid chromatography ESI ion trap mass spectrometry - Nora Unceta - Journal of Chromatography A, 1217 (2010) 3392-3399
+\item Ion Traps in modern mass spectrometry - Dirk Nolting, Robert Malek, Alexander Makarov - Mass Spec Rev. 2017;1-19
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Grazie per l'attenzione!!!}
+\begin{block}{Due risate...}
+	\begin{figure}
+		\includegraphics[scale=0.32]{Images/GrazieAttenzione.jpeg}
+	\end{figure}
+\end{block}
+\end{frame}
+
+\end{document}
